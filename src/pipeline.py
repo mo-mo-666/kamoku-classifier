@@ -3,19 +3,22 @@ import shutil
 import logging
 from typing import Optional, List, Tuple
 
-from .setting_io import SETTING_KEYS, MARK_COORDS
+from .read_args import read_args
+from .setting_io import SETTING_KEYS, MARK_COORDS, MARK_COORDS2
 from .image_io import read_images
 from .read_marksheet import MarkReader
 
 
-
-def main():
+def pipeline():
+    args, mode, img_dir, save_dir = read_args()
     metadata = SETTING_KEYS
-    metadata["sheet"] = MARK_COORDS
+    if mode == 1:
+        metadata["sheet"] = MARK_COORDS
+    elif mode == 2:
+        metadata["sheet"] = MARK_COORDS2
+
     mark_reader = MarkReader(metadata)
 
-    img_dir = "./data"
-    save_dir = "./secret"
     img_iter = read_images(img_dir)
     for p, img, dpi in img_iter:
         choice = mark_reader.read(img)["choice"]

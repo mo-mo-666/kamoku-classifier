@@ -1,8 +1,8 @@
 numpy
 opencv-python
-openpyxl
 Pillow
 
 # dev
+openpyxl
 matplotlib
 jupyter
