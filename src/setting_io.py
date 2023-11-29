@@ -1,5 +1,4 @@
 import csv
-from openpyxl import load_workbook
 from collections import defaultdict
 import logging
 from typing import Iterable, Optional
