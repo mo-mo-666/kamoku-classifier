@@ -9,6 +9,7 @@ opencv-python = "*"
 openpyxl = "*"
 matplotlib = "*"
 jupyter = "*"
+pillow = "*"
 
 [dev-packages]
 
