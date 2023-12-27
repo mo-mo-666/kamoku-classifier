@@ -23,7 +23,7 @@ def read_args() -> Tuple[None, int, str, str]:
     # args = parser.parse_args()
     args = None
     while True:
-        mode = input("文系科目を分類したい場合は1を，理系理科を分類したい場合は2を押してください。\n:")
+        mode = input("社会を分類したい場合は1を，理系理科を分類したい場合は2を押してください。\n:")
         if mode == "1" or mode == "2":
             mode = int(mode)
             break
